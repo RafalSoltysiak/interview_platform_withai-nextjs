@@ -1,16 +1,17 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { z } from "zod";
-import Image from "next/image";
 import { toast } from "sonner";
-import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
+
 import FormField from "./FormField";
-import { useRouter } from "next/navigation";
 
 const authFormSchema = (type: FormType) => {
   return z.object({
@@ -57,7 +58,7 @@ export default function AuthForm({ type }: { type: FormType }) {
           <Image src="/logo.svg" alt="logo" height={32} width={38} />
           <h2 className="text-primary-100">PrepWise</h2>
         </div>
-        <h3>Practice jon interview with AI</h3>
+        <h3>Practice join interview with AI</h3>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
