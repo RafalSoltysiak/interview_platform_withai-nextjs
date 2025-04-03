@@ -139,7 +139,7 @@ export default function AuthForm({ type }: { type: FormType }) {
         </Form>
 
         <p className="text-center">
-          {isSign ? "No account yet?" : "Have an account already"}
+          {isSign ? "No account yet?" : "Have an account already?"}
           <Link
             href={!isSign ? "/sign-in" : "/sign-up"}
             className="font-bold text-user-primary ml-1"
