@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Button } from "@/components/ui/button";
-import InterviewCard from "@/components/InterviewCard";
 import {
   getCurrentUser,
   getInterviewsByUserId,
   getLastestInterviews,
 } from "@/lib/actions/auth.action";
+
+import { Button } from "@/components/ui/button";
+import InterviewCard from "@/components/InterviewCard";
 
 export default async function Page() {
   const user = await getCurrentUser();
@@ -16,8 +17,8 @@ export default async function Page() {
     await getLastestInterviews({ userId: user?.id! }),
   ]);
 
-  const hasPastInterviews = userInterviews?.length > 0;
-  const hasUpcomingInterviews = latestInterviews?.length > 0;
+  const hasPastInterviews = userInterviews?.length! > 0;
+  const hasUpcomingInterviews = latestInterviews?.length! > 0;
 
   return (
     <>
